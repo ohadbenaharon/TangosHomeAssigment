@@ -1,0 +1,5483 @@
+[
+ {
+  "id": "REG-IR-0042",
+  "name": "Aria Shipping Lines",
+  "country": "IR",
+  "aliases": [
+   "Aria Lines"
+  ],
+  "officers": [
+   {
+    "name": "Farhad Noori",
+    "role": "director"
+   },
+   {
+    "name": "Leila Karimi",
+    "role": "director"
+   },
+   {
+    "name": "Omid Shirazi",
+    "role": "secretary"
+   },
+   {
+    "name": "Sara Tehrani",
+    "role": "treasurer"
+   },
+   {
+    "name": "Babak Jafari",
+    "role": "director"
+   },
+   {
+    "name": "Dariush Rahimi",
+    "role": "director"
+   },
+   {
+    "name": "Mina Soltani",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Caspian Trade Bank",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Zagros Freight",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Alborz Holdings",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0100",
+  "name": "Arvand Maritime Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Layla Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Aydin",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Bosphorus Polymer International",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0101",
+  "name": "Hormuz Textile Partners",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Nadia Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Hormuz Petro Logistics Co",
+    "relation": "parent"
+   },
+   {
+    "name": "Karun Energy International",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Hormuz Textile Industries",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0102",
+  "name": "Sahand Agro Exports",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Ivanova",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0103",
+  "name": "Bosphorus Mining Industries",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Aydin",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Karun Commodities Trading",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Khazar Energy Ventures",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0104",
+  "name": "Bosphorus Polymer Industries",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Kamran Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Karam",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0105",
+  "name": "Anatolia Commodities Logistics Co",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Nazari",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Sahand Machinery Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0106",
+  "name": "Sahand Cargo Logistics Co",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Yilmaz",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Maritime Industries",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Tabriz Cargo Logistics Co",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Sahand Machinery Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0107",
+  "name": "Ural Petro Holdings",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Karam",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Yusuf Demir",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Sahand Metals Holdings",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0108",
+  "name": "Volga Industrial Industries",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Ivanova",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0109",
+  "name": "Levant Petro Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Sokolov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0110",
+  "name": "Tabriz Mining Ventures",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Irina Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Pamir Energy Exports",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Levant Cargo Trading",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0111",
+  "name": "Ural Mining Exports",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Anya Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Emre Babic",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0112",
+  "name": "Baltika Industrial Logistics Co",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Selim Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "director"
+   },
+   {
+    "name": "Irina Farsi",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0113",
+  "name": "Damavand Maritime Corp",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Babic",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0114",
+  "name": "Khazar Metals Ventures",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Sahand Petro Corp",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0115",
+  "name": "Lut Cargo Industries",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Irina Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Babic",
+    "role": "director"
+   },
+   {
+    "name": "Selim Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Babic",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0116",
+  "name": "Baltika Petro Holdings",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Anya Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Nazari",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Commodities Corp",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Pamir Metals Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0117",
+  "name": "Toros Industrial Exports",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Demir",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Petro Corp",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0118",
+  "name": "Khazar Polymer Exports",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Babic",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0119",
+  "name": "Damavand Metals Industries",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0120",
+  "name": "Tabriz Industrial Ventures",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Karam",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Nazari",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Commodities Trading",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0121",
+  "name": "Lut Metals Ventures",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "director"
+   },
+   {
+    "name": "Reza Aydin",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Petro Logistics Co",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0122",
+  "name": "Oxus Mining Trading",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0123",
+  "name": "Karun Metals Ventures",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Industrial Group",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0124",
+  "name": "Damavand Agro International",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Babic",
+    "role": "director"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0125",
+  "name": "Oxus Metals Trading",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Selim Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Nazari",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Levant Petro Logistics Co",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0126",
+  "name": "Sahand Energy International",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Sokolov",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0127",
+  "name": "Aras Maritime Holdings",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Karam",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0128",
+  "name": "Oxus Petro Exports",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Demir",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Maritime Corp",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0129",
+  "name": "Hormuz Polymer Group",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Levant Industrial Holdings",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0130",
+  "name": "Damavand Mining Exports",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Textile Ventures",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0131",
+  "name": "Baltika Mining International",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Babic",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0132",
+  "name": "Oxus Cargo Holdings",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Machinery Logistics Co",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Sahand Machinery Logistics Co",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0133",
+  "name": "Ural Maritime Partners",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Layla Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "director"
+   },
+   {
+    "name": "Emre Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0134",
+  "name": "Aras Maritime Ventures",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Kamran Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Hormuz Petro Logistics Co",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Volga Textile Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Hormuz Textile Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0135",
+  "name": "Arvand Industrial Holdings",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Nazari",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-TR-0136",
+  "name": "Ural Agro Trading",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0137",
+  "name": "Sahand Industrial Exports",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Petro Exports",
+    "relation": "parent"
+   },
+   {
+    "name": "Toros Machinery Group",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Tabriz Machinery Ventures",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0138",
+  "name": "Khazar Machinery Trading",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0139",
+  "name": "Damavand Industrial Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-SY-0140",
+  "name": "Volga Polymer Exports",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Petrov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Hormuz Polymer Holdings",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0141",
+  "name": "Tabriz Cargo Logistics Co",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0142",
+  "name": "Ural Industrial Ventures",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Sokolov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Metals Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0143",
+  "name": "Anatolia Industrial Ventures",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Yusuf Demir",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Volkov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Mining Corp",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0144",
+  "name": "Damavand Machinery International",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Babic",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Industrial Group",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Lut Textile Industries",
+    "relation": "parent"
+   },
+   {
+    "name": "Levant Mining Corp",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0145",
+  "name": "Levant Cargo International",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0146",
+  "name": "Toros Mining Partners",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Karam",
+    "role": "director"
+   },
+   {
+    "name": "Irina Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "director"
+   },
+   {
+    "name": "Layla Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Qeshm Cargo Ventures",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Tabriz Metals International",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Levant Industrial Holdings",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0147",
+  "name": "Levant Cargo Industries",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Volkov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Petro Corp",
+    "relation": "parent"
+   },
+   {
+    "name": "Qeshm Textile Ventures",
+    "relation": "parent"
+   },
+   {
+    "name": "Tabriz Industrial Group",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0148",
+  "name": "Karun Energy Corp",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Volkov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Industrial Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0149",
+  "name": "Sahand Metals Corp",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0150",
+  "name": "Volga Textile Group",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0151",
+  "name": "Sahand Petro Corp",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Commodities Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0152",
+  "name": "Ural Agro International",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Petrov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Energy Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0153",
+  "name": "Sahand Machinery Logistics Co",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-DE-0154",
+  "name": "Pamir Energy Partners",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Babic",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0155",
+  "name": "Baltika Mining Holdings",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Industrial Group",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0156",
+  "name": "Levant Textile Ventures",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Karam",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Petrov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Mining Logistics Co",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0157",
+  "name": "Ural Cargo Logistics Co",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Anya Nazari",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Karun Machinery Holdings",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Sahand Energy Partners",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0158",
+  "name": "Levant Industrial Industries",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Demir",
+    "role": "director"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "director"
+   },
+   {
+    "name": "Layla Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Demir",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-DE-0159",
+  "name": "Bosphorus Polymer Holdings",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Lut Maritime International",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0160",
+  "name": "Sahand Maritime Exports",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Commodities Exports",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0161",
+  "name": "Pamir Industrial Exports",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Irina Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Demir",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Farsi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Polymer Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0162",
+  "name": "Baltika Energy Trading",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0163",
+  "name": "Lut Metals Corp",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0164",
+  "name": "Arvand Industrial Ventures",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Goran Ivanova",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0165",
+  "name": "Khazar Commodities Partners",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Petrov",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0166",
+  "name": "Oxus Machinery International",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Yusuf Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0167",
+  "name": "Ural Commodities Partners",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Anya Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Mining Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0168",
+  "name": "Bosphorus Agro Group",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Kamran Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Aras Energy Trading",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0169",
+  "name": "Toros Agro Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Demir",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Machinery Ventures",
+    "relation": "parent"
+   },
+   {
+    "name": "Levant Mining Corp",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0170",
+  "name": "Karun Cargo Partners",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Sokolov",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0171",
+  "name": "Volga Petro Partners",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Polymer Trading",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Qeshm Agro Industries",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Damavand Mining Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0172",
+  "name": "Hormuz Industrial Logistics Co",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Mining Trading",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0173",
+  "name": "Bosphorus Agro Logistics Co",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Yilmaz",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0174",
+  "name": "Oxus Petro Logistics Co",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Anya Babic",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0175",
+  "name": "Levant Energy Group",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Karam",
+    "role": "director"
+   },
+   {
+    "name": "Anya Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Maritime Group",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0176",
+  "name": "Volga Metals Logistics Co",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Layla Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Demir",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Khazar Energy Ventures",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0177",
+  "name": "Aras Textile Industries",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Ivanova",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Machinery Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0178",
+  "name": "Baltika Commodities Group",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Cargo Logistics Co",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0179",
+  "name": "Levant Petro Logistics Co",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Karun Energy International",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0180",
+  "name": "Bosphorus Polymer International",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Yusuf Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0181",
+  "name": "Levant Petro Exports",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Aydin",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Industrial Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Lut Textile Industries",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Aras Mining Corp",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0182",
+  "name": "Anatolia Cargo Holdings",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Karam",
+    "role": "director"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Levant Mining Corp",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0183",
+  "name": "Toros Machinery Group",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Kamran Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-SY-0184",
+  "name": "Khazar Polymer Ventures",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Babic",
+    "role": "director"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Selim Demir",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Textile Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0185",
+  "name": "Anatolia Industrial Logistics Co",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Moradi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Toros Agro International",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0186",
+  "name": "Sahand Machinery Industries",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Aras Cargo Partners",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0187",
+  "name": "Qeshm Agro Industries",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0188",
+  "name": "Bosphorus Machinery Logistics Co",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Volkov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Karun Machinery Holdings",
+    "relation": "parent"
+   },
+   {
+    "name": "Qeshm Metals Logistics Co",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0189",
+  "name": "Qeshm Metals Logistics Co",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Karam",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Petro Partners",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0190",
+  "name": "Khazar Textile Trading",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0191",
+  "name": "Eurasia Textile Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Mining Holdings",
+    "relation": "parent"
+   },
+   {
+    "name": "Sahand Machinery Partners",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Volga Commodities Partners",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0192",
+  "name": "Lut Textile Industries",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Haddad",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Aras Industrial International",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Baltika Commodities Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0193",
+  "name": "Oxus Textile Industries",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Yusuf Demir",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Machinery Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0194",
+  "name": "Levant Energy Trading",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Babic",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Machinery Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0195",
+  "name": "Lut Industrial Corp",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Petrov",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Toros Petro Corp",
+    "relation": "parent"
+   },
+   {
+    "name": "Bosphorus Cargo Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0196",
+  "name": "Ural Polymer International",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Yusuf Ivanova",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0197",
+  "name": "Tabriz Energy Corp",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Farsi",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Bosphorus Polymer International",
+    "relation": "parent"
+   },
+   {
+    "name": "Pamir Machinery Holdings",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Bosphorus Industrial Trading",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0198",
+  "name": "Qeshm Cargo Ventures",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Osman",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Nazari",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Demir",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Eurasia Metals Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Baltika Maritime International",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0199",
+  "name": "Arvand Maritime Logistics Co",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Babic",
+    "role": "director"
+   },
+   {
+    "name": "Reza Karam",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Goran Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Levant Cargo Industries",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0200",
+  "name": "Tabriz Maritime Corp",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Goran Aydin",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Machinery Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Hormuz Polymer Corp",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Volga Agro Industries",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0201",
+  "name": "Volga Petro Logistics Co",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Nadia Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Aras Maritime Ventures",
+    "relation": "parent"
+   },
+   {
+    "name": "Aras Agro Partners",
+    "relation": "parent"
+   },
+   {
+    "name": "Sahand Machinery Exports",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0202",
+  "name": "Pamir Energy Exports",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Selim Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Kamran Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Machinery Logistics Co",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0203",
+  "name": "Aras Commodities Ventures",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Energy Industries",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Oxus Machinery Partners",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Oxus Metals Corp",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0204",
+  "name": "Oxus Machinery Ventures",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Kamran Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Haddad",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Energy Logistics Co",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Ural Energy Ventures",
+    "relation": "parent"
+   },
+   {
+    "name": "Volga Energy Ventures",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0205",
+  "name": "Volga Agro Industries",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0206",
+  "name": "Toros Metals Group",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Yusuf Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Petro Logistics Co",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Oxus Textile Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Lut Metals Corp",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0207",
+  "name": "Khazar Agro Trading",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Volkov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Lut Commodities Partners",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0208",
+  "name": "Lut Machinery Partners",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Metals International",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0209",
+  "name": "Oxus Metals Group",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Yusuf Demir",
+    "role": "director"
+   },
+   {
+    "name": "Anya Ivanova",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-SY-0210",
+  "name": "Baltika Energy Logistics Co",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Selim Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Cargo Partners",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0211",
+  "name": "Arvand Polymer Ventures",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0212",
+  "name": "Khazar Machinery Exports",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Haddad",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0213",
+  "name": "Arvand Industrial Corp",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0214",
+  "name": "Damavand Mining Logistics Co",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Petrov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Bosphorus Maritime Group",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Ural Polymer Trading",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Aras Machinery Logistics Co",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0215",
+  "name": "Sahand Cargo International",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Textile Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0216",
+  "name": "Sahand Energy Logistics Co",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Karam",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Maritime International",
+    "relation": "parent"
+   },
+   {
+    "name": "Bosphorus Petro Holdings",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0217",
+  "name": "Hormuz Petro Ventures",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "director"
+   },
+   {
+    "name": "Irina Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Metals Trading",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Oxus Industrial Exports",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Anatolia Machinery Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0218",
+  "name": "Oxus Agro Corp",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Sokolov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Polymer Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Oxus Petro Trading",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0219",
+  "name": "Tabriz Textile Corp",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Demir",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Sokolov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Agro Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0220",
+  "name": "Bosphorus Mining Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Layla Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Lut Maritime International",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Pamir Metals Logistics Co",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Oxus Mining Industries",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0221",
+  "name": "Karun Industrial Trading",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Petrov",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0222",
+  "name": "Lut Commodities Partners",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Anya Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0223",
+  "name": "Tabriz Machinery Group",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Sokolov",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0224",
+  "name": "Arvand Mining Logistics Co",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Emre Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Emre Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Nadia Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0225",
+  "name": "Eurasia Maritime Group",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Anya Nazari",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0226",
+  "name": "Qeshm Textile Ventures",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0227",
+  "name": "Eurasia Industrial Ventures",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Commodities Trading",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0228",
+  "name": "Baltika Mining Corp",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Toros Machinery Industries",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Bosphorus Machinery Holdings",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0229",
+  "name": "Qeshm Maritime Group",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Ural Commodities Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0230",
+  "name": "Bosphorus Metals Group",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Lut Textile Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0231",
+  "name": "Aras Industrial Corp",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Petrov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Karun Energy Corp",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0232",
+  "name": "Sahand Polymer Group",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Babic",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IN-0233",
+  "name": "Damavand Energy Corp",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Eurasia Commodities Logistics Co",
+    "relation": "parent"
+   },
+   {
+    "name": "Toros Machinery Logistics Co",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Aras Polymer Industries",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0234",
+  "name": "Arvand Agro Industries",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Khazar Machinery Trading",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Khazar Polymer Holdings",
+    "relation": "parent"
+   },
+   {
+    "name": "Tabriz Maritime Industries",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0235",
+  "name": "Qeshm Textile Partners",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Goran Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Moradi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Polymer Trading",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Karun Textile Industries",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0236",
+  "name": "Volga Machinery Ventures",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Reza Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Sokolov",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0237",
+  "name": "Aras Industrial International",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Karam",
+    "role": "director"
+   },
+   {
+    "name": "Goran Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Demir",
+    "role": "director"
+   },
+   {
+    "name": "Reza Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Sokolov",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-SY-0238",
+  "name": "Qeshm Machinery Corp",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Maritime Holdings",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0239",
+  "name": "Baltika Petro Corp",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Commodities Exports",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Hormuz Petro Ventures",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0240",
+  "name": "Khazar Energy Ventures",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Petro Partners",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0241",
+  "name": "Lut Agro Logistics Co",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Yusuf Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0242",
+  "name": "Karun Petro International",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Goran Demir",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Ural Textile Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0243",
+  "name": "Ural Agro Logistics Co",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Toros Agro Partners",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Levant Industrial Exports",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0244",
+  "name": "Arvand Agro Holdings",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Babic",
+    "role": "director"
+   },
+   {
+    "name": "Pavel Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-TR-0245",
+  "name": "Oxus Maritime Industries",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Pavel Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-TR-0246",
+  "name": "Anatolia Commodities Trading",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Petrov",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0247",
+  "name": "Sahand Metals Trading",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Pamir Maritime Trading",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0248",
+  "name": "Bosphorus Petro Holdings",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Yusuf Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-DE-0249",
+  "name": "Levant Mining Corp",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0250",
+  "name": "Lut Maritime Group",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Eurasia Commodities Logistics Co",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0251",
+  "name": "Karun Commodities Logistics Co",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0252",
+  "name": "Oxus Commodities Corp",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Industrial Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0253",
+  "name": "Levant Cargo Trading",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Karam",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Demir",
+    "role": "director"
+   },
+   {
+    "name": "Emre Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Selim Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-DE-0254",
+  "name": "Bosphorus Industrial Trading",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Kamran Karam",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0255",
+  "name": "Pamir Machinery Holdings",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Kamran Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Karun Textile Industries",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Aras Machinery Corp",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0256",
+  "name": "Lut Petro Partners",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Babic",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Volga Agro Industries",
+    "relation": "parent"
+   },
+   {
+    "name": "Bosphorus Machinery Holdings",
+    "relation": "parent"
+   },
+   {
+    "name": "Aras Agro Partners",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0257",
+  "name": "Tabriz Agro Ventures",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Agro Holdings",
+    "relation": "parent"
+   },
+   {
+    "name": "Anatolia Maritime International",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Tabriz Textile Holdings",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0258",
+  "name": "Ural Machinery Holdings",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Irina Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Karam",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-US-0259",
+  "name": "Sahand Machinery Partners",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Reza Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Goran Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Petro Exports",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-DE-0260",
+  "name": "Volga Metals Exports",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Demir",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Aras Machinery Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Qeshm Metals Logistics Co",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-VE-0261",
+  "name": "Bosphorus Cargo Trading",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Nadia Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0262",
+  "name": "Anatolia Maritime Logistics Co",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Hassan Moradi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Sahand Textile Exports",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Anatolia Machinery Group",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0263",
+  "name": "Oxus Machinery Partners",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Yusuf Ivanova",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Maryam Nazari",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-DE-0264",
+  "name": "Damavand Petro Industries",
+  "country": "DE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Selim Karam",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Energy Corp",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0265",
+  "name": "Ural Energy Ventures",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Irina Aydin",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Anatolia Metals Trading",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0266",
+  "name": "Lut Energy Trading",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Selim Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Industrial Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0267",
+  "name": "Anatolia Petro Industries",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-RU-0268",
+  "name": "Damavand Machinery Logistics Co",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Moradi",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Demir",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Sahand Machinery Logistics Co",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0269",
+  "name": "Arvand Mining Trading",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Selim Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Textile Group",
+    "relation": "parent"
+   },
+   {
+    "name": "Bosphorus Petro Holdings",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-AE-0270",
+  "name": "Lut Maritime Exports",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Emre Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Haddad",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Karam",
+    "role": "director"
+   },
+   {
+    "name": "Hassan Babic",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Nazari",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Toros Metals Corp",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0271",
+  "name": "Bosphorus Cargo Industries",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Volkov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Levant Textile Ventures",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Ural Energy Holdings",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0272",
+  "name": "Toros Petro Corp",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Ural Maritime Partners",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0273",
+  "name": "Baltika Maritime Ventures",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Selim Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Levant Cargo International",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0274",
+  "name": "Baltika Cargo Holdings",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Demir",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Aydin",
+    "role": "director"
+   },
+   {
+    "name": "Yusuf Nazari",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Layla Babic",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Karam",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Machinery Ventures",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Baltika Agro Exports",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0275",
+  "name": "Anatolia Energy Industries",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Karam",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0276",
+  "name": "Sahand Textile Ventures",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Reza Karam",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Osman",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Oxus Machinery Ventures",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0277",
+  "name": "Aras Mining Corp",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Tariq Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Goran Petrov",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0278",
+  "name": "Damavand Textile Industries",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Selim Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   },
+   {
+    "name": "Reza Aydin",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-TR-0279",
+  "name": "Toros Polymer Holdings",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Babic",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Lut Petro Partners",
+    "relation": "parent"
+   },
+   {
+    "name": "Pamir Commodities Partners",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0280",
+  "name": "Anatolia Machinery Group",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Kamran Yilmaz",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Reza Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Layla Haddad",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-TR-0281",
+  "name": "Bosphorus Textile Ventures",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Osman",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Damavand Mining Exports",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Lut Agro Logistics Co",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-US-0282",
+  "name": "Ural Metals Group",
+  "country": "US",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Petrov",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Layla Ivanova",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Yilmaz",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-KP-0283",
+  "name": "Arvand Industrial Exports",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Irina Farsi",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Baltika Energy Logistics Co",
+    "relation": "parent"
+   },
+   {
+    "name": "Hormuz Commodities Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0284",
+  "name": "Damavand Petro Corp",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Reza Aydin",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Goran Petrov",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Tabriz Maritime Holdings",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Arvand Industrial Exports",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0285",
+  "name": "Anatolia Metals Trading",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Pavel Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Yilmaz",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-IR-0286",
+  "name": "Eurasia Commodities Logistics Co",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Yilmaz",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Sokolov",
+    "role": "director"
+   },
+   {
+    "name": "Reza Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Reza Petrov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Ivanova",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Pamir Industrial Exports",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Ural Agro Logistics Co",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0287",
+  "name": "Tabriz Maritime Industries",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Reza Nazari",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Vesna Moradi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Yusuf Yilmaz",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0288",
+  "name": "Tabriz Metals International",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Babic",
+    "role": "treasurer"
+   },
+   {
+    "name": "Maryam Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Anya Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Volkov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Haddad",
+    "role": "secretary"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-VE-0289",
+  "name": "Arvand Petro Holdings",
+  "country": "VE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Anya Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Goran Demir",
+    "role": "secretary"
+   },
+   {
+    "name": "Emre Demir",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Industrial Ventures",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Eurasia Energy Holdings",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0290",
+  "name": "Lut Maritime International",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Hassan Babic",
+    "role": "secretary"
+   },
+   {
+    "name": "Vesna Sokolov",
+    "role": "secretary"
+   },
+   {
+    "name": "Goran Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Irina Moradi",
+    "role": "director"
+   }
+  ],
+  "links": [
+   {
+    "name": "Bosphorus Textile Corp",
+    "relation": "shareholder"
+   },
+   {
+    "name": "Lut Metals Corp",
+    "relation": "subsidiary"
+   },
+   {
+    "name": "Ural Cargo Logistics Co",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-TR-0291",
+  "name": "Oxus Textile Group",
+  "country": "TR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Aydin",
+    "role": "treasurer"
+   },
+   {
+    "name": "Pavel Moradi",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Lut Energy Trading",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IN-0292",
+  "name": "Pamir Cargo Ventures",
+  "country": "IN",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Tariq Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Nazari",
+    "role": "treasurer"
+   },
+   {
+    "name": "Hassan Nazari",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Khazar Maritime International",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-RU-0293",
+  "name": "Ural Polymer Partners",
+  "country": "RU",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Vesna Haddad",
+    "role": "secretary"
+   },
+   {
+    "name": "Maryam Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Nadia Karam",
+    "role": "director"
+   },
+   {
+    "name": "Selim Farsi",
+    "role": "director"
+   },
+   {
+    "name": "Emre Haddad",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Ural Energy Holdings",
+    "relation": "parent"
+   }
+  ]
+ },
+ {
+  "id": "REG-IR-0294",
+  "name": "Eurasia Energy Holdings",
+  "country": "IR",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Volkov",
+    "role": "secretary"
+   },
+   {
+    "name": "Kamran Farsi",
+    "role": "treasurer"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Sahand Industrial Exports",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0295",
+  "name": "Qeshm Cargo Group",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Maryam Petrov",
+    "role": "director"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "director"
+   }
+  ],
+  "links": []
+ },
+ {
+  "id": "REG-AE-0296",
+  "name": "Hormuz Textile Industries",
+  "country": "AE",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Goran Petrov",
+    "role": "secretary"
+   }
+  ],
+  "links": [
+   {
+    "name": "Arvand Textile Industries",
+    "relation": "parent"
+   },
+   {
+    "name": "Arvand Industrial Ventures",
+    "relation": "shareholder"
+   }
+  ]
+ },
+ {
+  "id": "REG-SY-0297",
+  "name": "Pamir Metals Logistics Co",
+  "country": "SY",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Layla Haddad",
+    "role": "director"
+   },
+   {
+    "name": "Vesna Ivanova",
+    "role": "director"
+   },
+   {
+    "name": "Anya Farsi",
+    "role": "secretary"
+   },
+   {
+    "name": "Tariq Osman",
+    "role": "treasurer"
+   },
+   {
+    "name": "Kamran Osman",
+    "role": "secretary"
+   },
+   {
+    "name": "Nadia Nazari",
+    "role": "treasurer"
+   }
+  ],
+  "links": [
+   {
+    "name": "Toros Polymer Holdings",
+    "relation": "parent"
+   },
+   {
+    "name": "Bosphorus Agro Group",
+    "relation": "subsidiary"
+   }
+  ]
+ },
+ {
+  "id": "REG-KP-0298",
+  "name": "Pamir Commodities Partners",
+  "country": "KP",
+  "aliases": [],
+  "officers": [
+   {
+    "name": "Irina Sokolov",
+    "role": "treasurer"
+   },
+   {
+    "name": "Emre Yilmaz",
+    "role": "secretary"
+   },
+   {
+    "name": "Yusuf Demir",
+    "role": "treasurer"
+   }
+  ],
+  "links": []
+ }
+]
