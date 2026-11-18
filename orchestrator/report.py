@@ -13,6 +13,8 @@ from orchestrator.models import (
     NotRun,
     Outcome,
     Ran,
+    RegistryFindings,
+    RegistryRecord,
     SanctionEntry,
     Source,
 )
@@ -39,6 +41,11 @@ def _text_entry(report: EntityReport) -> str:
             lines.append(f"media: {_media_text(media)}")
         case Failed(error=error):
             lines.append(f"media: ERROR ({error})")
+    match report.registry:
+        case Ran(value=RegistryFindings(record=record)) if record is not None:
+            lines.append(f"registry: {_registry_text(record, report.country)}")
+        case Failed(error=error):
+            lines.append(f"registry: ERROR ({error})")
     body = "".join(f"  {line}\n" for line in lines) if lines else "  no findings\n"
     return f"{report.entity}:\n{body}"
 
@@ -48,10 +55,21 @@ def _sanctions_text(entries: Iterable[SanctionEntry]) -> str:
 
 
 def _media_text(media: MediaFindings) -> str:
-    noun = "article" if media.count == 1 else "articles"
     ids = ", ".join(media.article_ids[:MAX_IDS_IN_TEXT])
     more = ", ..." if media.count > MAX_IDS_IN_TEXT else ""
-    return f"{media.count} {noun} ({ids}{more})"
+    return f"{_plural(media.count, 'article')} ({ids}{more})"
+
+
+def _registry_text(record: RegistryRecord, investigated_country: str) -> str:
+    officers = _plural(len(record.officers), "officer")
+    linked = _plural(len(record.linked), "linked company", "linked companies")
+    # Name-only lookups can hit a same-named company elsewhere; surface it.
+    where = f"; registered in {record.country}" if record.country != investigated_country else ""
+    return f"{record.id} ({officers}, {linked}{where})"
+
+
+def _plural(n: int, singular: str, plural: str | None = None) -> str:
+    return f"{n} {singular if n == 1 else (plural or singular + 's')}"
 
 
 # --- JSON Lines --------------------------------------------------------------------
@@ -67,6 +85,7 @@ def report_to_dict(report: EntityReport) -> dict[str, Any]:
     outcomes: dict[Source, Outcome[Any]] = {
         Source.SANCTIONS: report.sanctions,
         Source.MEDIA: report.media,
+        Source.REGISTRY: report.registry,
     }
     errors = {s.value: o.error for s, o in outcomes.items() if isinstance(o, Failed)}
     return {
@@ -75,6 +94,7 @@ def report_to_dict(report: EntityReport) -> dict[str, Any]:
         "country": report.country,
         "sanctions": _value(report.sanctions, lambda es: [_sanction_dict(e) for e in es]),
         "media": _value(report.media, _media_dict),
+        "registry": _value(report.registry, _registry_dict),
         "source_status": {s.value: _status(o) for s, o in outcomes.items()},
         **({"errors": errors} if errors else {}),
     }
@@ -105,3 +125,19 @@ def _sanction_dict(entry: SanctionEntry) -> dict[str, Any]:
 
 def _media_dict(media: MediaFindings) -> dict[str, Any]:
     return {"count": media.count, "article_ids": list(media.article_ids)}
+
+
+def _registry_dict(findings: RegistryFindings) -> dict[str, Any]:
+    record = findings.record
+    if record is None:
+        return {"found": False}
+    return {
+        "found": True,
+        "id": record.id,
+        "name": record.name,
+        "country": record.country,
+        "officer_count": len(record.officers),
+        "linked_count": len(record.linked),
+        "officers": [{"name": o.name, "roles": list(o.roles)} for o in record.officers],
+        "linked": [{"name": c.name, "relations": list(c.relations)} for c in record.linked],
+    }

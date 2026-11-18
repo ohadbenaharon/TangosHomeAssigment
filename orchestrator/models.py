@@ -61,6 +61,38 @@ class MediaFindings:
         return len(self.article_ids)
 
 
+@dataclass(frozen=True, slots=True)
+class Officer:
+    """A person registered against a company. One person holding several
+    positions is one officer with several roles."""
+
+    name: str
+    roles: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class LinkedCompany:
+    name: str
+    relations: tuple[str, ...]  # subsidiary / shareholder / parent
+
+
+@dataclass(frozen=True, slots=True)
+class RegistryRecord:
+    id: str
+    name: str
+    country: str
+    officers: tuple[Officer, ...]
+    linked: tuple[LinkedCompany, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class RegistryFindings:
+    """Result of a registry lookup that completed; ``record`` is None if the
+    entity has no registry record."""
+
+    record: RegistryRecord | None
+
+
 # --- Per-source outcome --------------------------------------------------------
 # A compliance report must distinguish "checked, nothing found" from "not checked"
 # from "check failed". An empty list alone cannot express that.
@@ -93,3 +125,4 @@ class EntityReport:
     country: str
     sanctions: Outcome[tuple[SanctionEntry, ...]]
     media: Outcome[MediaFindings]
+    registry: Outcome[RegistryFindings]

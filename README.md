@@ -18,9 +18,17 @@ uv run python -m orchestrator --format json   # JSON Lines, one object per entit
 uv run python -m orchestrator -v              # + progress/timing on stderr
 ```
 
-Input paths can be overridden with `--investigations`, `--sanctions`, `--media`.
+The registry service must be running for registry checks:
 
-Exit codes: `0` success, `2` invalid input or arguments.
+```bash
+python3 registry_service.py      # listens on localhost:7311
+```
+
+Input paths can be overridden with `--investigations`, `--sanctions`, `--media`;
+the registry with `--registry-url` and `--registry-timeout`.
+
+Exit codes: `0` success; `1` report produced but some source checks failed (e.g. the
+registry was unreachable; affected entities show `ERROR`); `2` invalid input or arguments.
 
 ## Develop
 
