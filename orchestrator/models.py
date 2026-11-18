@@ -1,0 +1,95 @@
+"""Domain models. All immutable; value equality is what makes de-duplication work."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from enum import StrEnum
+
+from orchestrator.names import NameKey, name_key
+
+
+class Source(StrEnum):
+    SANCTIONS = "sanctions"
+    MEDIA = "media"
+    REGISTRY = "registry"
+
+
+@dataclass(frozen=True, slots=True)
+class Investigation:
+    """One row of the investigations file."""
+
+    name: str
+    entity_type: str
+    country: str
+    key: NameKey = field(init=False, compare=False, repr=False)
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "key", name_key(self.name))
+
+
+@dataclass(frozen=True, slots=True, order=True)
+class SanctionEntry:
+    """One watchlist row. Identical rows compare equal, which is how
+    duplicated watchlist entries collapse into one finding."""
+
+    list_name: str
+    risk: str
+    country: str
+    name: str
+    aliases: tuple[str, ...] = ()
+
+    @property
+    def keys(self) -> frozenset[NameKey]:
+        """Every name this entry is known by, normalised."""
+        return frozenset(k for k in map(name_key, (self.name, *self.aliases)) if k)
+
+
+@dataclass(frozen=True, slots=True)
+class Article:
+    id: str
+    published: str
+    title: str
+    body: str
+
+
+@dataclass(frozen=True, slots=True)
+class MediaFindings:
+    article_ids: tuple[str, ...]  # distinct, sorted
+
+    @property
+    def count(self) -> int:
+        return len(self.article_ids)
+
+
+# --- Per-source outcome --------------------------------------------------------
+# A compliance report must distinguish "checked, nothing found" from "not checked"
+# from "check failed". An empty list alone cannot express that.
+
+
+@dataclass(frozen=True, slots=True)
+class Ran[T]:
+    value: T
+
+
+@dataclass(frozen=True, slots=True)
+class NotRun:
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class Failed:
+    error: str
+
+
+type Outcome[T] = Ran[T] | NotRun | Failed
+
+NOT_RUN = NotRun()
+
+
+@dataclass(frozen=True, slots=True)
+class EntityReport:
+    entity: str
+    entity_type: str
+    country: str
+    sanctions: Outcome[tuple[SanctionEntry, ...]]
+    media: Outcome[MediaFindings]
