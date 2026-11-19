@@ -51,3 +51,26 @@ def test_missing_file_is_an_input_error(tmp_path: Path) -> None:
         list(iter_articles(tmp_path / "nope.gz"))
     with pytest.raises(InputError):
         load_sanctions(tmp_path / "nope.csv")
+
+
+def test_non_utf8_csv_is_an_input_error(tmp_path: Path) -> None:
+    path = tmp_path / "i.csv"
+    path.write_bytes(b"Entity name,Entity type,Country\nCaf\xe9 Co,organization,IR\n")
+    with pytest.raises(InputError, match="cannot read"):
+        load_investigations(path)
+
+
+def test_name_without_letters_or_digits_is_an_input_error(tmp_path: Path) -> None:
+    """Names compare by word tokens; '---' and '&&&' would silently merge into one."""
+    path = tmp_path / "i.csv"
+    path.write_text("Entity name,Entity type,Country\n---,organization,IR\n")
+    with pytest.raises(InputError, match="no letters or digits"):
+        load_investigations(path)
+
+
+def test_corrupt_gzip_is_an_input_error(tmp_path: Path) -> None:
+    path = tmp_path / "m.jsonl.gz"
+    data = gzip.compress(b'{"id": "AM-1", "published": "", "title": "", "body": ""}\n' * 50)
+    path.write_bytes(data[:20] + b"\x00" * 40 + data[60:])
+    with pytest.raises(InputError):
+        list(iter_articles(path))

@@ -9,10 +9,12 @@ from __future__ import annotations
 import csv
 import gzip
 import json
+import zlib
 from collections.abc import Iterator
 from pathlib import Path
 
 from orchestrator.models import Article, Investigation, SanctionEntry
+from orchestrator.names import name_key
 
 
 class InputError(Exception):
@@ -27,7 +29,7 @@ ARTICLE_FIELDS = ("id", "published", "title", "body")
 def load_investigations(path: Path) -> list[Investigation]:
     return [
         Investigation(
-            name=_required(row, "Entity name", path, line),
+            name=_name(row, "Entity name", path, line),
             entity_type=row["Entity type"],
             country=row["Country"].upper(),
         )
@@ -38,7 +40,7 @@ def load_investigations(path: Path) -> list[Investigation]:
 def load_sanctions(path: Path) -> list[SanctionEntry]:
     return [
         SanctionEntry(
-            name=_required(row, "Entity name", path, line),
+            name=_name(row, "Entity name", path, line),
             aliases=tuple(a.strip() for a in row["Aliases"].split("|") if a.strip()),
             risk=row["Risk"],
             country=row["Country of origin"].upper(),
@@ -60,7 +62,8 @@ def iter_articles(path: Path) -> Iterator[Article]:
                     yield Article(**{f: str(raw[f]) for f in ARTICLE_FIELDS})
                 except (json.JSONDecodeError, KeyError, TypeError) as exc:
                     raise InputError(f"{path}:{line_no}: malformed article ({exc})") from exc
-    except (OSError, EOFError) as exc:  # missing file, not gzip, truncated archive
+    # missing file, not gzip, truncated or corrupt archive, not UTF-8
+    except (OSError, EOFError, zlib.error, UnicodeDecodeError) as exc:
         raise InputError(f"{path}: cannot read media archive ({exc})") from exc
 
 
@@ -77,8 +80,17 @@ def _read_csv(path: Path, columns: tuple[str, ...]) -> Iterator[tuple[int, dict[
                 if not any((v or "").strip() for v in row.values()):
                     continue  # blank line
                 yield reader.line_num, {c: (row.get(c) or "").strip() for c in columns}
-    except OSError as exc:
+    except (OSError, UnicodeDecodeError, csv.Error) as exc:
         raise InputError(f"{path}: cannot read ({exc})") from exc
+
+
+def _name(row: dict[str, str], column: str, path: Path, line: int) -> str:
+    """A name must contain at least one word character: names are compared by their
+    word tokens, so e.g. "---" and "&&&" would otherwise silently become one entity."""
+    value = _required(row, column, path, line)
+    if not name_key(value):
+        raise InputError(f"{path}:{line}: {column!r} {value!r} has no letters or digits")
+    return value
 
 
 def _required(row: dict[str, str], column: str, path: Path, line: int) -> str:

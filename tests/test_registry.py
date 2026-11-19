@@ -105,6 +105,28 @@ def test_retry_backoff_is_exponential() -> None:
     assert sleeps == [0.1, 0.2]
 
 
+def test_circuit_breaker_fails_fast_once_the_service_looks_down() -> None:
+    sleeps: list[float] = []
+    dead = RegistryClient(
+        "http://127.0.0.1:9",  # connection refused
+        retry=RetryPolicy(attempts=3, backoff_seconds=0.1),
+        failure_threshold=2,
+        sleep=sleeps.append,
+    )
+    with pytest.raises(RegistryError, match="unavailable"):
+        dead.lookup("first")  # two refused attempts open the breaker; third refused fast
+    with pytest.raises(RegistryError, match="unavailable"):
+        dead.lookup("second")  # no network attempt, no backoff
+    assert sleeps == [0.1, 0.2]
+
+
+def test_circuit_breaker_resets_on_any_answer(fake: FakeRegistry) -> None:
+    flaky = RegistryClient(fake.url, retry=NO_RETRY_WAIT, failure_threshold=3)
+    for _ in range(3):  # 2 failures each time, never 3 in a row: breaker stays closed
+        fake.fail_with = [503, 503]
+        assert flaky.lookup("Aria Shipping Lines") is not None
+
+
 def test_cache_dedupes_by_normalised_name(fake: FakeRegistry) -> None:
     cache = CachingRegistry(client(fake))
     first = cache.lookup("Aria Shipping Lines")

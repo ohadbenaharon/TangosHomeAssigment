@@ -36,7 +36,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--media", type=Path, default=Path("data/media.jsonl.gz"))
     p.add_argument("--registry-url", default="http://localhost:7311")
     p.add_argument(
-        "--registry-timeout", type=float, default=5.0, metavar="SECONDS", help="per request"
+        "--registry-timeout",
+        type=_positive_float,
+        default=5.0,
+        metavar="SECONDS",
+        help="per request (default: %(default)s)",
     )
     p.add_argument(
         "--registry-workers",
@@ -87,9 +91,22 @@ def build_rules(args: argparse.Namespace) -> RoutingRules:
 
 
 def _positive_int(value: str) -> int:
-    number = int(value)
+    try:
+        number = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"not an integer: {value!r}") from None
     if number < 1:
         raise argparse.ArgumentTypeError("must be at least 1")
+    return number
+
+
+def _positive_float(value: str) -> float:
+    try:
+        number = float(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"not a number: {value!r}") from None
+    if not number > 0:  # also rejects NaN
+        raise argparse.ArgumentTypeError("must be positive")
     return number
 
 
@@ -123,6 +140,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         parser.error(str(exc))  # exits with code 2
     if not rules.enabled_sources():
         parser.error("routing rules exclude every source; nothing would be checked")
+    try:
+        client = RegistryClient(args.registry_url, timeout_seconds=args.registry_timeout)
+    except ValueError as exc:
+        parser.error(f"--registry-url: {exc}")
     logging.basicConfig(
         level=logging.INFO if args.verbose else logging.WARNING,
         format="%(asctime)s %(levelname)s %(message)s",
@@ -134,9 +155,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         orchestrator = Orchestrator(
             watchlist=Watchlist(load_sanctions(args.sanctions)),
             articles=functools.partial(iter_articles, args.media),
-            registry=CachingRegistry(
-                RegistryClient(args.registry_url, timeout_seconds=args.registry_timeout)
-            ),
+            registry=CachingRegistry(client),
             rules=rules,
             registry_workers=args.registry_workers,
         )

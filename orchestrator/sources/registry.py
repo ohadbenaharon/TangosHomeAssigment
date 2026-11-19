@@ -23,6 +23,11 @@ Transport (measured, see NOTES.md):
   that overflow the backlog and get reset. A localhost connect takes
   microseconds while a response takes ~300ms, so serialising connects costs
   nothing measurable and removed every reset up to 32 workers.
+- A circuit breaker stops trying once the service looks down. Serialised
+  connects make an unreachable (packet-dropping) host the worst case: every
+  connect waits out the timeout in turn, ~24 minutes for a default run. After
+  ``failure_threshold`` consecutive failed attempts, remaining lookups fail
+  immediately -- still reported as errors, never as "no record".
 
 Failure policy: a lookup that cannot be completed raises :class:`RegistryError`
 -- it is never reported as "no record". For compliance, "we could not check" and
@@ -62,6 +67,10 @@ class RegistryError(Exception):
     """A registry lookup could not be completed."""
 
 
+class _CircuitOpen(Exception):
+    """Internal: the circuit breaker refused a request."""
+
+
 class RegistryLookup(Protocol):
     def lookup(self, name: str) -> RegistryRecord | None: ...
 
@@ -75,8 +84,35 @@ class RetryPolicy:
         return self.backoff_seconds * float(2**attempt)
 
 
+class CircuitBreaker:
+    """Opens after ``threshold`` consecutive failures; any success closes it.
+
+    No half-open probing: this is a batch run of a few seconds, so once the
+    service is judged down, failing the rest of the run fast is the goal. A
+    long-lived service would add a cool-down and a probe request.
+    """
+
+    def __init__(self, threshold: int) -> None:
+        self._threshold = threshold
+        self._failures = 0
+        self._lock = threading.Lock()
+
+    @property
+    def is_open(self) -> bool:
+        with self._lock:
+            return self._failures >= self._threshold
+
+    def record_success(self) -> None:
+        with self._lock:
+            self._failures = 0
+
+    def record_failure(self) -> None:
+        with self._lock:
+            self._failures += 1
+
+
 class RegistryClient:
-    """Stateless, thread-safe HTTP client for the registry (no caching here)."""
+    """Thread-safe HTTP client for the registry (no caching here)."""
 
     def __init__(
         self,
@@ -85,8 +121,11 @@ class RegistryClient:
         timeout_seconds: float = 5.0,
         retry: RetryPolicy = RetryPolicy(),
         max_pages: int = 100,
+        failure_threshold: int = 5,
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
+        if timeout_seconds <= 0:
+            raise ValueError("timeout must be positive")
         url = urllib.parse.urlsplit(base_url)
         if url.scheme not in ("http", "https") or not url.hostname:
             raise ValueError(f"unsupported registry URL {base_url!r}")
@@ -97,6 +136,7 @@ class RegistryClient:
         self._port = url.port
         self._path_prefix = url.path.rstrip("/")
         self._connect_gate = threading.Lock()
+        self._breaker = CircuitBreaker(failure_threshold)
         self._timeout = timeout_seconds
         self._retry = retry
         self._max_pages = max_pages
@@ -130,16 +170,24 @@ class RegistryClient:
         for attempt in range(self._retry.attempts):
             try:
                 status, body = self._request(path)
+            except _CircuitOpen:
+                raise RegistryError(
+                    f"{name!r}: registry unavailable (gave up after repeated failures)"
+                ) from None
             except (OSError, http.client.HTTPException) as exc:  # network-level failure
+                self._breaker.record_failure()
                 last_error = f"{type(exc).__name__}: {exc}"
             else:
-                if status == 200:
-                    return _decode(body, name)
-                if status == 404:
-                    return None
-                if status not in RETRYABLE_STATUS:
+                if status in RETRYABLE_STATUS:
+                    self._breaker.record_failure()
+                    last_error = f"HTTP {status}"
+                else:
+                    self._breaker.record_success()  # the service is answering
+                    if status == 200:
+                        return _decode(body, name)
+                    if status == 404:
+                        return None
                     raise RegistryError(f"{name!r}: HTTP {status}")
-                last_error = f"HTTP {status}"
             if attempt + 1 < self._retry.attempts:
                 delay = self._retry.delay(attempt)
                 log.info("registry %r: %s, retrying in %.1fs", name, last_error, delay)
@@ -150,6 +198,10 @@ class RegistryClient:
         connection = self._connection_class(self._host, self._port, timeout=self._timeout)
         try:
             with self._connect_gate:
+                # Checked inside the gate so threads queued behind a slow connect
+                # fail fast once the breaker opens.
+                if self._breaker.is_open:
+                    raise _CircuitOpen
                 connection.connect()
             connection.request("GET", path, headers={"Accept": "application/json"})
             response = connection.getresponse()

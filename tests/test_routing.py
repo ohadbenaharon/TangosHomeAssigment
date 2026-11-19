@@ -100,9 +100,13 @@ def test_name_regex_with_comma_is_not_split() -> None:
         ["--exclude-name", "("],
         ["--exclude-source", "sanctions,media,registry"],
         ["--registry-workers", "0"],
+        ["--registry-workers", "many"],
+        ["--registry-timeout", "0"],
+        ["--registry-timeout", "nan"],
+        ["--registry-url", "nonsense"],
     ],
 )
-def test_invalid_routing_flags_exit_2(argv: list[str]) -> None:
+def test_invalid_flags_exit_2(argv: list[str]) -> None:
     with pytest.raises(SystemExit) as exc:
         main(argv)
     assert exc.value.code == 2

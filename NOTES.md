@@ -82,6 +82,11 @@ speculative index; not worth it at a 3.6s total.
   fail immediately; 5s timeout per request. The report is still printed, affected
   entities show `registry: ERROR (...)`, follow-ups for them are marked unknown, and
   the process exits 1.
+- **Circuit breaker**: after 5 consecutive failed attempts (network errors or
+  retryable statuses; any answer, even a 404, resets the count) the remaining lookups
+  fail immediately as `registry unavailable` — still errors, never "no record". No
+  half-open probing: for a seconds-long batch run, failing the rest fast is the goal;
+  a long-lived service would add a cool-down and a probe.
 - **Cache** keyed by normalised name, holding *futures*, so concurrent lookups of one
   name share one in-flight request. Failures are cached for the run.
 - **Registry country ≠ investigated country is surfaced, not rejected.** Lookups are by
@@ -127,7 +132,11 @@ speculative index; not worth it at a 3.6s total.
 
 ### Input handling
 - Malformed input fails loudly with file:line (exit 2): silently skipping a bad
-  watchlist row or article would silently miss a hit.
+  watchlist row or article would silently miss a hit. That includes non-UTF-8 files,
+  corrupt archives, and **names with no letters or digits** — names compare by word
+  tokens, so `---` and `&&&` would otherwise silently merge into one entity.
+- Invalid `--registry-url`, `--registry-timeout ≤ 0` (0 would mean non-blocking
+  sockets) and `--registry-workers < 1` are usage errors.
 
 ## Concurrency and performance
 
@@ -136,7 +145,8 @@ speculative index; not worth it at a 3.6s total.
 | checkpoint 2 (sequential registry) | 34s |
 | **full default run (16 workers)** | **3.6s** — registry 2.5s, media scan 1.1s |
 | README routing example | 0.7s |
-| registry service down | 5.5s (was 61s), all entities reported as errors |
+| registry service down (connection refused) | 1.4s (was 61s), all entities reported as errors |
+| registry host unreachable (packets dropped) | 25s (would be ~24 min without the breaker) |
 
 The registry phase is bounded by the service's ~300ms per request: 108 requests
 (97 lookups + 11 second officer pages); pages of one record are sequential, so with
@@ -158,10 +168,14 @@ with an SLA. Getting there needed two transport fixes, both measured:
   connections one at a time** (a lock around `connect()` only; requests still overlap)
   → 0 resets at 16 and 32 workers, same 2.5s: a localhost connect takes microseconds,
   a response 300ms. At 64 workers resets reappear — another reason not to go higher.
+- **…which made an unreachable host the worst case.** Found in the final review: with
+  connects serialised, a host that drops packets makes every connect wait out the
+  timeout *in turn* — measured 12s for 8 entities at a 0.5s timeout, extrapolating to
+  ~24 minutes for a default run. The circuit breaker (above) caps that at 5 timeouts.
 
 ## Validation
 
-- **70 tests** (0.5s): matcher (incl. the README's Aria rule), sources, loaders,
+- **79 tests** (0.5s): matcher (incl. the README's Aria rule), sources, loaders,
   registry client (in-process fake server with failure injection and request counting,
   plus a **contract test against the provided `registry_service.Handler`**), cache
   (shared in-flight requests across threads), routing (semantics table + the README's
@@ -197,8 +211,9 @@ with an SLA. Getting there needed two transport fixes, both measured:
 - Checkpoint 4: _tbd_
 
 ## With more time
-- **Circuit breaker** for the registry: with the service down every lookup still
-  spends its retries (5.5s total now, but proportional to entity count).
+- **Half-open circuit breaker** with a cool-down, if this ever became a long-lived
+  service; and a connect timeout separate from (shorter than) the read timeout.
+- Honour `Retry-After` on 429.
 - **Proxy support** if the registry ever sits behind one (`http.client` ignores proxy
   settings by design here).
 - **Registry fallback on aliases**: if a name has no record, retry with its watchlist
