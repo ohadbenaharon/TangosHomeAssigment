@@ -27,6 +27,18 @@ python3 registry_service.py      # listens on localhost:7311
 Input paths can be overridden with `--investigations`, `--sanctions`, `--media`;
 the registry with `--registry-url` and `--registry-timeout`.
 
+### Routing rules
+
+```bash
+# only sanctions + registry, for IR/RU entities, skipping names starting "Test" and US
+uv run python -m orchestrator --include-source sanctions,registry \
+    --include-country IR,RU --exclude-name '^Test' --exclude-country US
+```
+
+`--include-/--exclude-source`, `--include-/--exclude-country`, `--include-/--exclude-name`
+(regex, `re.search`, case-sensitive unless `(?i)`). Flags repeat; within one dimension
+rules are OR'd and exclude beats include; dimensions are AND'd. See `--help`.
+
 Exit codes: `0` success; `1` report produced but some source checks failed (e.g. the
 registry was unreachable; affected entities show `ERROR`); `2` invalid input or arguments.
 

@@ -17,6 +17,7 @@ from orchestrator.models import (
     Source,
 )
 from orchestrator.orchestrator import Orchestrator
+from orchestrator.routing import IncludeExclude, RoutingRules
 from orchestrator.sources.registry import CachingRegistry, RegistryError
 from orchestrator.sources.sanctions import Watchlist
 from tests.conftest import article, sanction
@@ -24,7 +25,7 @@ from tests.fake_registry import FakeRegistry, record, serve
 
 WATCHLIST = Watchlist([sanction("Persian Gulf Petrochemical", "PGPC")])
 ARTICLES = [article("AM-1", "Persian Gulf Petrochemical said"), article("AM-2", "PGPC said")]
-LOCAL = frozenset({Source.SANCTIONS, Source.MEDIA})
+LOCAL = RoutingRules(sources=IncludeExclude(exclude=frozenset({Source.REGISTRY})))
 
 
 class StubRegistry:
@@ -43,14 +44,14 @@ def inv(name: str, country: str = "IR") -> Investigation:
 
 
 def test_duplicate_investigations_are_reported_once_in_input_order() -> None:
-    reports = Orchestrator(WATCHLIST, lambda: ARTICLES, sources=LOCAL).run(
+    reports = Orchestrator(WATCHLIST, lambda: ARTICLES, rules=LOCAL).run(
         [inv("B Co"), inv("A Co"), inv("b  co")]
     )
     assert [r.entity for r in reports] == ["B Co", "A Co"]
 
 
 def test_media_search_uses_watchlist_aliases() -> None:
-    [report] = Orchestrator(WATCHLIST, lambda: ARTICLES, sources=LOCAL).run([inv("PGPC")])
+    [report] = Orchestrator(WATCHLIST, lambda: ARTICLES, rules=LOCAL).run([inv("PGPC")])
     assert report.media == Ran(MediaFindings(("AM-1", "AM-2")))
 
 
@@ -58,7 +59,8 @@ def test_disabled_sources_are_not_run_and_media_is_not_read() -> None:
     def no_media() -> list[Article]:
         raise AssertionError("media archive must not be read")
 
-    orch = Orchestrator(WATCHLIST, no_media, sources=frozenset({Source.SANCTIONS}))
+    only_sanctions = RoutingRules(sources=IncludeExclude(include=frozenset({Source.SANCTIONS})))
+    orch = Orchestrator(WATCHLIST, no_media, rules=only_sanctions)
     [report] = orch.run([inv("PGPC")])
     assert report.media is NOT_RUN and report.registry is NOT_RUN
     assert isinstance(report.sanctions, Ran) and len(report.sanctions.value) == 1

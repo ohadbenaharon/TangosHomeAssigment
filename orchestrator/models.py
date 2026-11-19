@@ -126,3 +126,11 @@ class EntityReport:
     sanctions: Outcome[tuple[SanctionEntry, ...]]
     media: Outcome[MediaFindings]
     registry: Outcome[RegistryFindings]
+
+    @property
+    def outcomes(self) -> dict[Source, Outcome[object]]:
+        return {
+            Source.SANCTIONS: self.sanctions,
+            Source.MEDIA: self.media,
+            Source.REGISTRY: self.registry,
+        }

@@ -83,6 +83,30 @@ archive **once** for all names → assemble reports → render.
   (The service matches on `casefold().strip()`, a slightly narrower equivalence than
   ours — irrelevant for this data, noted for production.)
 
+### Routing (checkpoint 3)
+- **One semantics for every dimension** (`IncludeExclude`): includes OR'd, excludes
+  OR'd, **exclude beats include**, no include rule ⇒ all included; dimensions AND'd.
+  Exclude-wins is the conservative reading — an explicit "never" shouldn't be undone
+  by a broader "only".
+- **Rules judge each input row before de-duplication**, so a row's own country
+  decides it. (No entity in this data appears with two countries.)
+- **Name regex: `re.search`, case-sensitive, on the name as written.** The user owns
+  anchoring (`^Test`) and case (`(?i)`); silently anchoring or case-folding would
+  make some patterns impossible to express. Matched against the raw name, not the
+  normalised key, because that's what the user sees.
+- **Country codes compared case-insensitively** (upper-cased on load and in rules).
+- **Country/name rules select primary investigations only; source rules apply to
+  everything** (relevant to follow-ups in checkpoint 4). Follow-ups have no country,
+  so country rules couldn't apply consistently to them.
+- **CLI:** each flag repeatable; source/country values comma-separated; regexes are
+  *not* split on commas (`{1,2}` is valid regex). Unknown source, invalid regex, or
+  rules that leave no source enabled → usage error, exit 2, before any work.
+- **"no findings" is qualified when sources were routed off**:
+  `no findings (checked: sanctions, registry)` — a bare "no findings" after skipping
+  media would overstate what was checked.
+- The watchlist is still used as an alias directory for media when the sanctions
+  source is routed off (routing controls which *checks* run, not reference data).
+
 ### Output
 - `--format json` is **JSON Lines**: one object per entity per line (literal reading
   of the spec; streamable; `jq`-friendly).
@@ -111,6 +135,10 @@ archive **once** for all names → assemble reports → render.
 - Registry client is tested against an in-process fake (failure injection, request
   counting) **and** a contract test against the provided `registry_service.Handler`
   (latency patched to 0), to catch drift between client and service.
+- Routing: the README's combined example is a test (fake registry, asserts which
+  entities ran, which registry calls were made, that media never ran, and the text).
+  On real data the same flags yield 28 entities, identical (incl. order) to an
+  independent CSV filter written separately in the validation run.
 - Killed the service mid-way: every entity reports a registry ERROR, exit code 1.
 - Performance: one archive pass takes ~1.1s vs ~37s for the naive per-entity regex.
 

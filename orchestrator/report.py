@@ -16,7 +16,6 @@ from orchestrator.models import (
     RegistryFindings,
     RegistryRecord,
     SanctionEntry,
-    Source,
 )
 
 MAX_IDS_IN_TEXT = 3
@@ -46,8 +45,17 @@ def _text_entry(report: EntityReport) -> str:
             lines.append(f"registry: {_registry_text(record, report.country)}")
         case Failed(error=error):
             lines.append(f"registry: ERROR ({error})")
-    body = "".join(f"  {line}\n" for line in lines) if lines else "  no findings\n"
-    return f"{report.entity}:\n{body}"
+    if not lines:
+        lines.append(_no_findings(report))
+    return f"{report.entity}:\n" + "".join(f"  {line}\n" for line in lines)
+
+
+def _no_findings(report: EntityReport) -> str:
+    # When routing switched sources off, say what "no findings" covers.
+    checked = [s.value for s, o in report.outcomes.items() if isinstance(o, Ran)]
+    if len(checked) == len(report.outcomes):
+        return "no findings"
+    return f"no findings (checked: {', '.join(checked)})"
 
 
 def _sanctions_text(entries: Iterable[SanctionEntry]) -> str:
@@ -82,11 +90,7 @@ def render_json(reports: Iterable[EntityReport]) -> str:
 
 
 def report_to_dict(report: EntityReport) -> dict[str, Any]:
-    outcomes: dict[Source, Outcome[Any]] = {
-        Source.SANCTIONS: report.sanctions,
-        Source.MEDIA: report.media,
-        Source.REGISTRY: report.registry,
-    }
+    outcomes = report.outcomes
     errors = {s.value: o.error for s, o in outcomes.items() if isinstance(o, Failed)}
     return {
         "entity": report.entity,
