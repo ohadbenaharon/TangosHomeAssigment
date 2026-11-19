@@ -12,6 +12,18 @@ Written against the service's *actual* behaviour, which differs from API.md
 - Linked companies arrive as ``links: [{name, relation}]`` (not
   ``linked_entities: [str]``) and are repeated, unpaginated, on every page.
 
+Transport (measured, see NOTES.md):
+
+- ``http.client`` rather than ``urllib.request``: on macOS ``urlopen`` consults
+  the system proxy configuration on *every* request, which under 16 threads
+  cost ~10s of CPU per run.
+- Connections are *opened* one at a time (requests still run concurrently).
+  The service's listen backlog is 5 and it closes the connection after every
+  response (HTTP/1.0), so concurrent workers reconnect in synchronised bursts
+  that overflow the backlog and get reset. A localhost connect takes
+  microseconds while a response takes ~300ms, so serialising connects costs
+  nothing measurable and removed every reset up to 32 workers.
+
 Failure policy: a lookup that cannot be completed raises :class:`RegistryError`
 -- it is never reported as "no record". For compliance, "we could not check" and
 "there is nothing there" are different answers.
@@ -24,9 +36,7 @@ import json
 import logging
 import threading
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 from collections.abc import Callable, Iterable
 from concurrent.futures import Future
 from dataclasses import dataclass
@@ -77,7 +87,16 @@ class RegistryClient:
         max_pages: int = 100,
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
-        self._base_url = base_url.rstrip("/")
+        url = urllib.parse.urlsplit(base_url)
+        if url.scheme not in ("http", "https") or not url.hostname:
+            raise ValueError(f"unsupported registry URL {base_url!r}")
+        self._connection_class = (
+            http.client.HTTPSConnection if url.scheme == "https" else http.client.HTTPConnection
+        )
+        self._host = url.hostname
+        self._port = url.port
+        self._path_prefix = url.path.rstrip("/")
+        self._connect_gate = threading.Lock()
         self._timeout = timeout_seconds
         self._retry = retry
         self._max_pages = max_pages
@@ -106,26 +125,37 @@ class RegistryClient:
 
     def _get_page(self, name: str, page: str | None) -> dict[str, Any] | None:
         query = {"name": name} | ({"page": page} if page is not None else {})
-        url = f"{self._base_url}/entities?{urllib.parse.urlencode(query)}"
+        path = f"{self._path_prefix}/entities?{urllib.parse.urlencode(query)}"
         last_error = ""
         for attempt in range(self._retry.attempts):
             try:
-                with urllib.request.urlopen(url, timeout=self._timeout) as response:
-                    return _decode(response.read(), name)
-            except urllib.error.HTTPError as exc:
-                if exc.code == 404:
+                status, body = self._request(path)
+            except (OSError, http.client.HTTPException) as exc:  # network-level failure
+                last_error = f"{type(exc).__name__}: {exc}"
+            else:
+                if status == 200:
+                    return _decode(body, name)
+                if status == 404:
                     return None
-                if exc.code not in RETRYABLE_STATUS:
-                    raise RegistryError(f"{name!r}: HTTP {exc.code}") from exc
-                last_error = f"HTTP {exc.code}"
-            except (urllib.error.URLError, TimeoutError, ConnectionError,
-                    http.client.HTTPException) as exc:  # fmt: skip
-                last_error = f"{type(exc).__name__}: {getattr(exc, 'reason', exc)}"
+                if status not in RETRYABLE_STATUS:
+                    raise RegistryError(f"{name!r}: HTTP {status}")
+                last_error = f"HTTP {status}"
             if attempt + 1 < self._retry.attempts:
                 delay = self._retry.delay(attempt)
                 log.info("registry %r: %s, retrying in %.1fs", name, last_error, delay)
                 self._sleep(delay)
         raise RegistryError(f"{name!r}: {last_error} (after {self._retry.attempts} attempts)")
+
+    def _request(self, path: str) -> tuple[int, bytes]:
+        connection = self._connection_class(self._host, self._port, timeout=self._timeout)
+        try:
+            with self._connect_gate:
+                connection.connect()
+            connection.request("GET", path, headers={"Accept": "application/json"})
+            response = connection.getresponse()
+            return response.status, response.read()
+        finally:
+            connection.close()
 
 
 def _decode(body: bytes, name: str) -> dict[str, Any]:

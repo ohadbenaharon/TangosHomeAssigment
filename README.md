@@ -25,7 +25,8 @@ python3 registry_service.py      # listens on localhost:7311
 ```
 
 Input paths can be overridden with `--investigations`, `--sanctions`, `--media`;
-the registry with `--registry-url` and `--registry-timeout`.
+the registry with `--registry-url`, `--registry-timeout` and `--registry-workers`
+(concurrent requests, default 16). A full default run takes ~4 seconds.
 
 ### Routing rules
 
@@ -48,5 +49,7 @@ registry was unreachable; affected entities show `ERROR`); `2` invalid input or 
 uv run pytest
 uv run mypy
 uv run ruff check . && uv run ruff format --check .
-uv run python scripts/crosscheck_media.py   # brute-force validation of media matching (~40s)
+# independent re-derivation of a full run from the raw data files (~20s)
+uv run python -m orchestrator --format json > report.jsonl
+uv run python scripts/validate_report.py report.jsonl
 ```

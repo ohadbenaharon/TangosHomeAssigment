@@ -21,7 +21,7 @@ testpaths = ["tests"]
 [tool.mypy]
 strict = true
 python_version = "3.12"
-files = ["orchestrator", "tests"]
+files = ["orchestrator", "tests", "scripts"]
 
 [tool.ruff]
 line-length = 100

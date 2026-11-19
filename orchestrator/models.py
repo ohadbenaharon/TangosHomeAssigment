@@ -119,6 +119,45 @@ NOT_RUN = NotRun()
 
 
 @dataclass(frozen=True, slots=True)
+class Screening:
+    """Watchlist + media results for one name. Computed once per distinct name per
+    run and shared by every place that name appears (primary or follow-up)."""
+
+    sanctions: Outcome[tuple[SanctionEntry, ...]]
+    media: Outcome[MediaFindings]
+
+    @property
+    def has_findings(self) -> bool:
+        match self.sanctions:
+            case Ran(value=entries) if entries:
+                return True
+            case Failed():
+                return True
+        match self.media:
+            case Ran(value=media) if media.count:
+                return True
+            case Failed():
+                return True
+        return False
+
+
+class FollowUpKind(StrEnum):
+    OFFICER = "officer"
+    LINKED = "linked"
+
+
+@dataclass(frozen=True, slots=True)
+class FollowUp:
+    """An officer or linked company discovered in a registry record, screened
+    against the watchlist and media (never the registry: depth is limited to 1)."""
+
+    name: str
+    kind: FollowUpKind
+    relationship: tuple[str, ...]  # officer roles, or link relations
+    screening: Screening
+
+
+@dataclass(frozen=True, slots=True)
 class EntityReport:
     entity: str
     entity_type: str
@@ -126,6 +165,8 @@ class EntityReport:
     sanctions: Outcome[tuple[SanctionEntry, ...]]
     media: Outcome[MediaFindings]
     registry: Outcome[RegistryFindings]
+    # Mirrors the registry outcome: not run / failed with it; Ran(()) if no record.
+    follow_ups: Outcome[tuple[FollowUp, ...]] = NOT_RUN
 
     @property
     def outcomes(self) -> dict[Source, Outcome[object]]:

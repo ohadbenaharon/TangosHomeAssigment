@@ -99,6 +99,7 @@ def test_name_regex_with_comma_is_not_split() -> None:
         ["--include-source", "sanctions,bogus"],
         ["--exclude-name", "("],
         ["--exclude-source", "sanctions,media,registry"],
+        ["--registry-workers", "0"],
     ],
 )
 def test_invalid_routing_flags_exit_2(argv: list[str]) -> None:

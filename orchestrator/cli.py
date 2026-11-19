@@ -13,7 +13,7 @@ from pathlib import Path
 
 from orchestrator.loaders import InputError, iter_articles, load_investigations, load_sanctions
 from orchestrator.models import EntityReport, Failed, Source
-from orchestrator.orchestrator import Orchestrator
+from orchestrator.orchestrator import DEFAULT_REGISTRY_WORKERS, Orchestrator
 from orchestrator.report import render_json, render_text
 from orchestrator.routing import IncludeExclude, RoutingRules
 from orchestrator.sources.registry import CachingRegistry, RegistryClient
@@ -37,6 +37,13 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--registry-url", default="http://localhost:7311")
     p.add_argument(
         "--registry-timeout", type=float, default=5.0, metavar="SECONDS", help="per request"
+    )
+    p.add_argument(
+        "--registry-workers",
+        type=_positive_int,
+        default=DEFAULT_REGISTRY_WORKERS,
+        metavar="N",
+        help="concurrent registry requests (default: %(default)s)",
     )
     p.add_argument("--format", choices=("text", "json"), default="text")
     p.add_argument("-v", "--verbose", action="store_true", help="log progress to stderr")
@@ -77,6 +84,13 @@ def build_rules(args: argparse.Namespace) -> RoutingRules:
             exclude=frozenset(map(_pattern, args.exclude_name)),
         ),
     )
+
+
+def _positive_int(value: str) -> int:
+    number = int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError("must be at least 1")
+    return number
 
 
 def _split(values: list[str]) -> list[str]:
@@ -124,6 +138,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 RegistryClient(args.registry_url, timeout_seconds=args.registry_timeout)
             ),
             rules=rules,
+            registry_workers=args.registry_workers,
         )
         reports = orchestrator.run(investigations)
     except InputError as exc:
