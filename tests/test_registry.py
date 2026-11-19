@@ -11,6 +11,7 @@ import registry_service
 from orchestrator.models import Failed, LinkedCompany, Officer, Ran, RegistryFindings
 from orchestrator.sources.registry import (
     CachingRegistry,
+    CircuitBreaker,
     RegistryClient,
     RegistryError,
     RetryPolicy,
@@ -106,18 +107,49 @@ def test_retry_backoff_is_exponential() -> None:
 
 
 def test_circuit_breaker_fails_fast_once_the_service_looks_down() -> None:
-    sleeps: list[float] = []
+    clock = FakeClock()
     dead = RegistryClient(
         "http://127.0.0.1:9",  # connection refused
         retry=RetryPolicy(attempts=3, backoff_seconds=0.1),
         failure_threshold=2,
-        sleep=sleeps.append,
+        breaker_min_seconds=0.1,
+        sleep=clock.sleep,
+        clock=clock,
     )
+    sleeps = clock.sleeps
     with pytest.raises(RegistryError, match="unavailable"):
         dead.lookup("first")  # two refused attempts open the breaker; third refused fast
     with pytest.raises(RegistryError, match="unavailable"):
         dead.lookup("second")  # no network attempt, no backoff
     assert sleeps == [0.1, 0.2]
+
+
+def test_circuit_breaker_ignores_a_burst_of_simultaneous_failures() -> None:
+    """16 threads can hit 5 connection resets in the same millisecond (e.g. two runs
+    at once overflow the service's backlog); retries absorb that, it is no outage."""
+    clock = FakeClock()
+    breaker = CircuitBreaker(threshold=5, min_seconds=1.0, clock=clock)
+    for _ in range(10):
+        breaker.record_failure()
+    assert not breaker.is_open
+    clock.sleep(1.0)
+    breaker.record_failure()  # still failing a second later: now it is down
+    assert breaker.is_open
+    breaker.record_success()
+    assert not breaker.is_open
+
+
+class FakeClock:
+    def __init__(self) -> None:
+        self.now = 0.0
+        self.sleeps: list[float] = []
+
+    def __call__(self) -> float:
+        return self.now
+
+    def sleep(self, seconds: float) -> None:
+        self.sleeps.append(seconds)
+        self.now += seconds
 
 
 def test_circuit_breaker_resets_on_any_answer(fake: FakeRegistry) -> None:

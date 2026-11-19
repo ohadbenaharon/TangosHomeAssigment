@@ -56,7 +56,10 @@ Registry
 - Officer count is distinct people. One person with two roles counts once.
 - A failed lookup is reported as `ERROR` with exit code 1, never as "no record".
   In screening, "couldn't check" must not look like "clean". After 5 failures in a
-  row a circuit breaker fails the rest fast, still as errors.
+  row lasting at least a second, a circuit breaker fails the rest fast, still as
+  errors. The time condition matters: with 16 threads, a brief overload resets
+  several connections in the same millisecond, and counting alone would read that
+  burst as an outage and fail the whole run.
 - If the registry country differs from the investigated one, I show it
   (`registered in XX`) instead of dropping the record. It may be a namesake, but
   that's for the analyst to decide.
@@ -85,7 +88,7 @@ Output and input
 |---|---|
 | checkpoint 2 (sequential registry) | 34s |
 | **full default run (16 workers)** | **3.6s**: registry 2.5s, media scan 1.1s |
-| registry service down | 1.4s, all entities reported as errors |
+| registry service down | 2.4s, all entities reported as errors |
 | registry host unreachable (packets dropped) | 25s (~24 min without the breaker) |
 
 The registry phase is bounded by its ~300ms per request (108 requests). Reaching 16
@@ -101,7 +104,7 @@ workers needed two measured transport fixes:
 
 ## Validation
 
-- **92 tests** (0.6s), including a contract test against the provided
+- **93 tests** (0.6s), including a contract test against the provided
   `registry_service.Handler`, an in-process fake registry with failure injection,
   shared in-flight requests, and the README's examples end to end.
 - **`scripts/validate_report.py`** re-derives a full run independently: raw files
@@ -115,6 +118,8 @@ workers needed two measured transport fixes:
   (`AM-004512`, `AM-008133`) are placeholders that don't mention Aria; a raw search
   finds exactly our 17.
 - Three consecutive runs: byte-identical output, 0 retries.
+- Three runs at once against one registry (18 runs in total): the overload resets
+  connections, retries absorb nearly all of it, and the breaker never trips.
 
 ## Surprises
 - The README's own matching example contradicts plain `\b` regex semantics.
@@ -122,6 +127,9 @@ workers needed two measured transport fixes:
   paginated, the field is `links`, not `linked_entities`.
 - The slow urllib proxy lookup was hiding the connection-reset problem; fixing the
   first exposed the second.
+- My first circuit breaker counted failures only. A test run that overlapped with
+  another run tripped it on a burst of resets and failed 90 entities, so it now
+  also requires the failures to last a second.
 
 ## Time spent
 

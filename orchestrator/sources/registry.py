@@ -26,8 +26,12 @@ Transport (measured, see NOTES.md):
 - A circuit breaker stops trying once the service looks down. Serialised
   connects make an unreachable (packet-dropping) host the worst case: every
   connect waits out the timeout in turn, ~24 minutes for a default run. After
-  ``failure_threshold`` consecutive failed attempts, remaining lookups fail
-  immediately -- still reported as errors, never as "no record".
+  ``failure_threshold`` consecutive failed attempts spanning at least
+  ``breaker_min_seconds``, remaining lookups fail immediately -- still reported
+  as errors, never as "no record". The time condition matters: with 16 threads,
+  a momentary overload (e.g. two runs at once) resets several connections in
+  the same millisecond, which retries absorb; counting alone would read that
+  burst as an outage and fail the whole run.
 
 Failure policy: a lookup that cannot be completed raises :class:`RegistryError`
 -- it is never reported as "no record". For compliance, "we could not check" and
@@ -85,30 +89,50 @@ class RetryPolicy:
 
 
 class CircuitBreaker:
-    """Opens after ``threshold`` consecutive failures; any success closes it.
+    """Opens after ``threshold`` consecutive failures spanning at least
+    ``min_seconds``; any success closes it. A burst of simultaneous failures from
+    concurrent requests is one moment of trouble, not proof the service is down.
 
     No half-open probing: this is a batch run of a few seconds, so once the
     service is judged down, failing the rest of the run fast is the goal. A
     long-lived service would add a cool-down and a probe request.
     """
 
-    def __init__(self, threshold: int) -> None:
+    def __init__(
+        self,
+        threshold: int,
+        min_seconds: float = 1.0,
+        clock: Callable[[], float] = time.monotonic,
+    ) -> None:
         self._threshold = threshold
+        self._min_seconds = min_seconds
+        self._clock = clock
         self._failures = 0
+        self._streak_started = 0.0
+        self._open = False
         self._lock = threading.Lock()
 
     @property
     def is_open(self) -> bool:
         with self._lock:
-            return self._failures >= self._threshold
+            return self._open
 
     def record_success(self) -> None:
         with self._lock:
             self._failures = 0
+            self._open = False
 
     def record_failure(self) -> None:
         with self._lock:
+            now = self._clock()
+            if self._failures == 0:
+                self._streak_started = now
             self._failures += 1
+            if (
+                self._failures >= self._threshold
+                and now - self._streak_started >= self._min_seconds
+            ):
+                self._open = True
 
 
 class RegistryClient:
@@ -122,7 +146,9 @@ class RegistryClient:
         retry: RetryPolicy = RetryPolicy(),
         max_pages: int = 100,
         failure_threshold: int = 5,
+        breaker_min_seconds: float = 1.0,
         sleep: Callable[[float], None] = time.sleep,
+        clock: Callable[[], float] = time.monotonic,
     ) -> None:
         if timeout_seconds <= 0:
             raise ValueError("timeout must be positive")
@@ -136,7 +162,7 @@ class RegistryClient:
         self._port = url.port
         self._path_prefix = url.path.rstrip("/")
         self._connect_gate = threading.Lock()
-        self._breaker = CircuitBreaker(failure_threshold)
+        self._breaker = CircuitBreaker(failure_threshold, breaker_min_seconds, clock)
         self._timeout = timeout_seconds
         self._retry = retry
         self._max_pages = max_pages
