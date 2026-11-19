@@ -73,9 +73,12 @@ archive **once** for all names → assemble reports → render.
   from the HTTP client so either can be tested or replaced alone.
 - **Registry country ≠ investigated country is surfaced, not rejected.** Lookups are by
   name only, so a hit can be a same-named company elsewhere. For 50 of the 56 distinct
-  entities found in the registry the countries differ; text output appends `registered in XX`, JSON
-  carries the registry `country`. Rejecting would hide officers/links that may matter;
-  the analyst decides.
+  entities found in the registry the countries differ. Rejecting would hide
+  officers/links that may matter; the analyst decides. JSON carries the registry
+  `country`; text output appends `; registered in XX` whenever it differs. That note
+  appears on most registry lines here, which is noisy — kept deliberately: the text
+  report is what a human reads, and a possible identity mismatch is exactly what they
+  should not have to dig into JSON to notice.
 - Query is sent with the investigation's original spelling; cache key is normalised.
   (The service matches on `casefold().strip()`, a slightly narrower equivalence than
   ours — irrelevant for this data, noted for production.)
