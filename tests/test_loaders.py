@@ -74,3 +74,57 @@ def test_corrupt_gzip_is_an_input_error(tmp_path: Path) -> None:
     path.write_bytes(data[:20] + b"\x00" * 40 + data[60:])
     with pytest.raises(InputError):
         list(iter_articles(path))
+
+
+@pytest.mark.parametrize(
+    "content", ["", "Entity name,Entity type,Country\n", "Entity name,Entity type,Country\n\n\n"]
+)
+def test_investigations_file_without_rows_is_an_input_error(tmp_path: Path, content: str) -> None:
+    path = tmp_path / "i.csv"
+    path.write_text(content)
+    with pytest.raises(InputError):
+        load_investigations(path)
+
+
+def test_watchlist_with_only_a_header_is_an_input_error(tmp_path: Path) -> None:
+    """An empty watchlist would silently report every entity as clean."""
+    path = tmp_path / "s.csv"
+    path.write_text("Entity name,Aliases,Risk,Country of origin,List\n")
+    with pytest.raises(InputError, match="no watchlist entries"):
+        load_sanctions(path)
+
+
+def test_media_archive_without_articles_is_an_input_error(tmp_path: Path) -> None:
+    path = tmp_path / "m.jsonl.gz"
+    with gzip.open(path, "wt") as fh:
+        fh.write("\n")
+    with pytest.raises(InputError, match="no articles"):
+        list(iter_articles(path))
+
+
+@pytest.mark.parametrize(
+    ("row", "problem"),
+    [("A Co,organization\n", "fewer"), ("A Co,organization,IR,extra\n", "more")],
+)
+def test_row_with_wrong_number_of_fields_is_an_input_error(
+    tmp_path: Path, row: str, problem: str
+) -> None:
+    """A missing trailing field would otherwise silently become an empty country."""
+    path = tmp_path / "i.csv"
+    path.write_text("Entity name,Entity type,Country\n" + row)
+    with pytest.raises(InputError, match=rf"i\.csv:2: .*{problem}"):
+        load_investigations(path)
+
+
+def test_bom_crlf_quoted_commas_and_padding_are_accepted(tmp_path: Path) -> None:
+    path = tmp_path / "i.csv"
+    path.write_bytes(
+        b"\xef\xbb\xbfEntity name,Entity type,Country\r\n"
+        b'"Aria Shipping Lines, Inc" , organization , ir \r\n'
+    )
+    [inv] = load_investigations(path)
+    assert (inv.name, inv.entity_type, inv.country) == (
+        "Aria Shipping Lines, Inc",
+        "organization",
+        "IR",
+    )

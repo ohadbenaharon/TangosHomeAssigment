@@ -98,7 +98,9 @@ def _registry_text(record: RegistryRecord, investigated_country: str) -> str:
     officers = _plural(len(record.officers), "officer")
     linked = _plural(len(record.linked), "linked company", "linked companies")
     # Name-only lookups can hit a same-named company elsewhere; surface it.
-    where = f"; registered in {record.country}" if record.country != investigated_country else ""
+    # Only a known, differing country is worth flagging; "" means the input had none.
+    differs = investigated_country and record.country != investigated_country
+    where = f"; registered in {record.country}" if differs else ""
     return f"{record.id} ({officers}, {linked}{where})"
 
 

@@ -18,6 +18,13 @@ uv run python -m orchestrator --format json   # JSON Lines, one object per entit
 uv run python -m orchestrator -v              # + progress/timing on stderr
 ```
 
+To screen one or a few names without an investigations file (repeatable; save any
+report with `> report.txt`):
+
+```bash
+uv run python -m orchestrator --name "Dariush Rahimi" --name "Aria Shipping Lines"
+```
+
 The registry service must be running for registry checks:
 
 ```bash

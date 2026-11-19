@@ -158,6 +158,47 @@ def test_cli_reports_input_errors_with_exit_code_2(data_dir: Path, registry: Fak
     assert main(_args(data_dir, registry)) == 2
 
 
+def test_cli_warns_when_routing_rules_match_nothing(
+    data_dir: Path, registry: FakeRegistry, caplog: pytest.LogCaptureFixture
+) -> None:
+    """An empty report must not read as "screened and clean" when nothing was screened."""
+    assert main([*_args(data_dir, registry), "--include-name", "^Nobody$"]) == 0
+    assert "nothing was screened" in caplog.text
+
+
+def test_cli_name_screens_ad_hoc_names_instead_of_the_file(
+    data_dir: Path, registry: FakeRegistry, capsys: pytest.CaptureFixture[str]
+) -> None:
+    args = _without_investigations(_args(data_dir, registry))
+    assert main([*args, "--name", "PGPC", "--name", "Someone New"]) == 0
+    assert capsys.readouterr().out == (
+        "PGPC:\n"
+        "  sanctions: EU (High, IR)\n"
+        "  media: 1 article (AM-3)\n"
+        # country unknown for an ad-hoc name: no misleading "registered in AE" note
+        "  registry: REG-AE-0001 (1 officer, 0 linked companies)\n"
+        "Someone New:\n"
+        "  no findings\n"
+    )
+
+
+@pytest.mark.parametrize(
+    "extra",
+    [["--name=---"], ["--name", " "], ["--name", "X", "--investigations", "i.csv"]],
+)
+def test_cli_rejects_bad_name_usage(
+    data_dir: Path, registry: FakeRegistry, extra: list[str]
+) -> None:
+    with pytest.raises(SystemExit) as exc:
+        main([*_without_investigations(_args(data_dir, registry)), *extra])
+    assert exc.value.code == 2
+
+
+def _without_investigations(args: list[str]) -> list[str]:
+    i = args.index("--investigations")
+    return args[:i] + args[i + 2 :]
+
+
 def _args(d: Path, registry: FakeRegistry) -> list[str]:
     return [
         "--investigations",

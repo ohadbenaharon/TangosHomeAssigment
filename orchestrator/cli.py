@@ -12,7 +12,8 @@ from collections.abc import Sequence
 from pathlib import Path
 
 from orchestrator.loaders import InputError, iter_articles, load_investigations, load_sanctions
-from orchestrator.models import EntityReport, Failed, Source
+from orchestrator.models import EntityReport, Failed, Investigation, Source
+from orchestrator.names import name_key
 from orchestrator.orchestrator import DEFAULT_REGISTRY_WORKERS, Orchestrator
 from orchestrator.report import render_json, render_text
 from orchestrator.routing import IncludeExclude, RoutingRules
@@ -25,13 +26,30 @@ EXIT_OK = 0
 EXIT_SOURCE_ERROR = 1  # report produced, but at least one check failed
 EXIT_INPUT_ERROR = 2
 
+DEFAULT_INVESTIGATIONS = Path("data/investigations.csv")
+
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="orchestrator",
         description="Screen counterparties against sanctions, adverse media and the registry.",
     )
-    p.add_argument("--investigations", type=Path, default=Path("data/investigations.csv"))
+    targets = p.add_mutually_exclusive_group()
+    targets.add_argument(
+        "--investigations",
+        type=Path,
+        default=DEFAULT_INVESTIGATIONS,
+        help="CSV of entities to screen (default: %(default)s)",
+    )
+    targets.add_argument(
+        "--name",
+        action="append",
+        dest="names",
+        type=_entity_name,
+        metavar="NAME",
+        help="screen this name instead of an investigations file (repeatable); "
+        "its country is unknown, so --include-country rules never admit it",
+    )
     p.add_argument("--sanctions", type=Path, default=Path("data/sanctions.csv"))
     p.add_argument("--media", type=Path, default=Path("data/media.jsonl.gz"))
     p.add_argument("--registry-url", default="http://localhost:7311")
@@ -88,6 +106,13 @@ def build_rules(args: argparse.Namespace) -> RoutingRules:
             exclude=frozenset(map(_pattern, args.exclude_name)),
         ),
     )
+
+
+def _entity_name(value: str) -> str:
+    name = value.strip()
+    if not name_key(name):
+        raise argparse.ArgumentTypeError(f"{value!r} has no letters or digits")
+    return name
 
 
 def _positive_int(value: str) -> int:
@@ -151,7 +176,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     started = time.perf_counter()
     try:
-        investigations = load_investigations(args.investigations)
+        investigations = (
+            [Investigation(name=n, entity_type="", country="") for n in args.names]
+            if args.names
+            else load_investigations(args.investigations)
+        )
         orchestrator = Orchestrator(
             watchlist=Watchlist(load_sanctions(args.sanctions)),
             articles=functools.partial(iter_articles, args.media),
@@ -164,6 +193,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         log.error("%s", exc)
         return EXIT_INPUT_ERROR
 
+    if not reports:  # the input has rows (checked on load), so the rules dropped them all
+        log.warning("no investigation matched the routing rules; nothing was screened")
     render = render_json if args.format == "json" else render_text
     sys.stdout.write(render(reports))
     log.info("sources: %s", ", ".join(sorted(rules.enabled_sources())))

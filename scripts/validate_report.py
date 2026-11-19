@@ -2,7 +2,7 @@
 
 Usage:
     uv run python -m orchestrator --format json > report.jsonl
-    uv run python scripts/validate_report.py report.jsonl          # ~1 minute
+    uv run python scripts/validate_report.py report.jsonl          # ~20 seconds
 
 Deliberately shares no code with the orchestrator: it reads the raw files
 directly (registry.json instead of the HTTP service, csv for the watchlist) and
